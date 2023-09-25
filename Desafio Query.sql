@@ -2,7 +2,8 @@
 SELECT 
 	Nome, 
 	Ano 
-FROM Filmes
+FROM 
+	Filmes
 
 --2--
 SELECT 
@@ -91,8 +92,10 @@ SELECT
 	G.Genero
 FROM
 	Filmes F
-INNER JOIN FilmesGenero FG ON F.Id = FG.IdFilme
-INNER JOIN Generos G ON FG.Id = G.Id
+	INNER JOIN FilmesGenero FG 
+	ON F.Id = FG.IdFilme
+	INNER JOIN Generos G 
+	ON FG.Id = G.Id
 
 --11--
 SELECT
@@ -100,11 +103,12 @@ SELECT
 	G.Genero
 FROM
 	Filmes F
-		INNER JOIN FilmesGenero FG 
-		ON F.Id = FG.IdFilme
-		INNER JOIN Generos G 
-		ON FG.Id = G.Id
-WHERE Genero = 'Mistério'
+	INNER JOIN FilmesGenero FG 
+	ON F.Id = FG.IdFilme
+	INNER JOIN Generos G 
+	ON FG.Id = G.Id
+WHERE 
+	Genero = 'MistÃ©rio'
 
 --12--
 SELECT
@@ -112,8 +116,9 @@ SELECT
 	A.PrimeiroNome,
 	A.UltimoNome,
 	EF.Papel
-From Filmes F
-		INNER JOIN ElencoFilme EF
-		ON F.Id = EF.id
-		INNER JOIN Atores A 
-		ON EF.Id = A.id
+From 
+	Filmes F
+	INNER JOIN ElencoFilme EF
+	ON F.Id = EF.id
+	INNER JOIN Atores A 
+	ON EF.Id = A.id
